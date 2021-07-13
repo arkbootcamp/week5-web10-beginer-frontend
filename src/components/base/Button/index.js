@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import style from './button.module.css'
 
 export class index extends Component {
   state ={
@@ -7,7 +8,7 @@ export class index extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.onMyClick(this.state.price)}>{this.props.title}</button>
+        <button className={style.btn} onClick={() => this.props.onMyClick(this.state.price)}>{this.props.title}</button>
       </div>
     )
   }
