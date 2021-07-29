@@ -26,7 +26,7 @@ const Product = () => {
     // console.log({name, description, price, data: ''});
     // descriptionRef.current.focus()
     // console.log(descriptionRef.current);
-    axios.post('http://locahost:4000/products', form)
+    axios.post(`http://locahost:4000/products/`, {nama: ''})
     .then((res)=>{
       alert('succs')
     })
