@@ -27,6 +27,7 @@ export class index extends Component {
     console.log(this.props);
     return (
       <div>
+
         <h1>hamaan Detail dengan product id {this.props.match.params.idproduct}</h1>
         <p>{this.state.product.body}</p>
       </div>
