@@ -6,16 +6,18 @@ import About from '../../pages/About'
 import Login from '../../pages/Login'
 import HomePage from '../../pages/HomePage'
 import Product from '../../pages/Product'
+import PrivateRoute from './module/PrivateRoute'
+import PublicRoute from './module/PublicRoute'
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <PrivateRoute exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/home" component={HomePage} />
+        <PrivateRoute exact path="/home" component={HomePage} />
         <Route path="/product/:idproduct" component={Detail} />
-        <Route path="/login" component={Login} />
-        <Route path="/product" component={Product} />
+        <PublicRoute path="/login" component={Login} />
+        <PrivateRoute path="/product" component={Product} />
       </Switch>
     </BrowserRouter>
   )

@@ -1,7 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './navbar.css'
-const Navbar = () => {
+const Navbar = (props) => {
+  // console.log('navbar dijalan kan');
+  console.log(props);
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">

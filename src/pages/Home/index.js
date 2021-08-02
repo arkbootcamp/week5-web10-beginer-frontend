@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import Navbar from '../../components/module/Navbar';
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {increment} from '../../configs/redux/actions/userAction'
 
 export class Home extends Component {
   constructor(){
@@ -31,9 +33,13 @@ export class Home extends Component {
 
   render() {
     console.log(this.props);
+    const myData = {
+      nama: 'risano',
+      email: 'muhammadrisno@gamil.com',
+      age: 17,
+    }
     return (
       <div>
-        <Navbar/>
         <h1>halaman home</h1>
         {this.state.loading ?
         <h1>loading...........</h1>:
@@ -49,9 +55,21 @@ export class Home extends Component {
           <li><Link to="/about">about</Link></li>
           <li><Link to="/detail">detail</Link></li>
         </ul>
+        <button onClick={() => this.props.handleIncremen()}>click</button>
       </div>
     )
   }
 }
 
-export default Home
+const mapStateToProps = (state)=>({
+  user: state.user
+})
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleIncremen: () => {
+      dispatch(increment())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
