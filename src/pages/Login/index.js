@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import style from './login.module.css'
-import Button from '../../components/module/Button'
+// import Button from '../../components/module/Button'
 import icon from '../../assets/module/Frame.png'
 import { useSelector } from 'react-redux'
 import {login} from '../../configs/redux/actions/userAction'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+// import Card from '../../components/base/Card'
+import {Button, Card} from '../../components/base'
+import {frame} from '../../utils/icon'
 
 const Login = (props) => {
   // const [username, setUsername] = useState('')
@@ -24,11 +27,6 @@ const Login = (props) => {
   } 
   const handleLogin =async()=>{
     dispatch(login(form, history))
-    
-    
-    
-    
-    
     
     // alert(`username ${form.username} dan password ${form.password}`)
     // try{
@@ -52,6 +50,8 @@ const Login = (props) => {
   const {count} = useSelector(state => state)
   return (
     <div className={style.wrapper}>
+      <img src={frame} alt="" />
+      <Card title="baju baru" description={Button}/>
       <h2>nilai count adalah {count}</h2>
       <h1 className={style.title}>halaman login</h1>
       <p>username: {form.username}</p>

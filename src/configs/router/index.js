@@ -8,6 +8,7 @@ import HomePage from '../../pages/HomePage'
 import Product from '../../pages/Product'
 import PrivateRoute from './module/PrivateRoute'
 import PublicRoute from './module/PublicRoute'
+import InsertProduct from '../../pages/InsertProduct'
 const Router = () => {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/product/:idproduct" component={Detail} />
         <PublicRoute path="/login" component={Login} />
         <PrivateRoute path="/product" component={Product} />
+        <Route path="/insert" component={InsertProduct} />
       </Switch>
     </BrowserRouter>
   )
