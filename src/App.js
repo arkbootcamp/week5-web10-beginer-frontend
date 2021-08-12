@@ -7,7 +7,7 @@ class App extends Component{
 
   render(){
     return(
-      // use router
+      // use router app
       <Router/>
     )
   }
