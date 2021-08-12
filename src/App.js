@@ -7,7 +7,7 @@ class App extends Component{
 
   render(){
     return(
-      // add route react
+      // add route stagingggggggg
       <Router/>
     )
   }
