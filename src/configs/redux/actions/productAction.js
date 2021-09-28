@@ -18,6 +18,9 @@ export const addProduct = (form, setLoading) =>(dispatch)=>{
   formData.append('price', form.price)
   formData.append('description', form.description)
   formData.append('image', form.image)
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
   axios.post('http://localhost:4000/v1/products/', formData)
   .then(()=>{
     dispatch({ type: 'SUCCESS_INSERT_PRODUCT' })
